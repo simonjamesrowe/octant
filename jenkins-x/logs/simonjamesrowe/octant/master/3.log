@@ -1,0 +1,129 @@
+
+Showing logs for build [32msimonjamesrowe-octant-master-re-8k7vk-3[0m stage [32mfrom-build-pack[0m and container [32mcredential-initializer[0m
+{"level":"info","ts":1609276635.0695786,"caller":"creds-init/main.go:44","msg":"Credentials initialized."}
+
+Showing logs for build [32msimonjamesrowe-octant-master-re-8k7vk-3[0m stage [32mfrom-build-pack[0m and container [32mworking-dir-initializer[0m
+
+Showing logs for build [32msimonjamesrowe-octant-master-re-8k7vk-3[0m stage [32mfrom-build-pack[0m and container [32mplace-tools[0m
+
+Showing logs for build [32msimonjamesrowe-octant-master-re-8k7vk-3[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-simonjamesrowe-octant-master-re-8k7vk-mfvvc[0m
+{"level":"info","ts":1609276644.4611137,"caller":"git/git.go:105","msg":"Successfully cloned https://github.com/simonjamesrowe/octant.git @ v0.0.3 in path /workspace/source"}
+{"level":"warn","ts":1609276644.461319,"caller":"git/git.go:152","msg":"Unexpected error: creating symlink: symlink /tekton/home/.ssh /****/.ssh: file exists"}
+{"level":"info","ts":1609276644.5165129,"caller":"git/git.go:133","msg":"Successfully initialized and updated submodules in path /workspace/source"}
+
+Showing logs for build [32msimonjamesrowe-octant-master-re-8k7vk-3[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-builder-home[0m
+
+Showing logs for build [32msimonjamesrowe-octant-master-re-8k7vk-3[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:73bac952680f017f33c7e798c94263f96daa2e72
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32msimonjamesrowe-octant-master-re-8k7vk-3[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32msimonjamesrowe-octant-master-re-8k7vk-3[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+[36mINFO[0m[0000] Resolved base name alpine:3 to builder       
+[36mINFO[0m[0000] Retrieving image manifest alpine:3           
+[36mINFO[0m[0001] Retrieving image manifest alpine:3           
+[36mINFO[0m[0003] Retrieving image manifest alpine:3           
+[36mINFO[0m[0004] Retrieving image manifest alpine:3           
+[36mINFO[0m[0005] Built cross stage deps: map[0:[/opt/octant]] 
+[36mINFO[0m[0005] Retrieving image manifest alpine:3           
+[36mINFO[0m[0007] Retrieving image manifest alpine:3           
+[36mINFO[0m[0008] Executing 0 build triggers                   
+[36mINFO[0m[0008] Checking for cached layer harbor.simonjamesrowe.com/todo/cache:7adcbd5da76a158f08a0e3bd216adb5266f5a10fedc8d536cd597d2756dd514f... 
+[36mINFO[0m[0008] No cached layer found for cmd RUN apk update &&     apk add       ca-certificates       xdg-utils       &&     wget --quiet --output-document /tmp/octant.tar.gz         https://github.com/vmware-tanzu/octant/releases/download/v${OCTANT_VERSION}/octant_${OCTANT_VERSION}_Linux-64bit.tar.gz &&     sha256sum /tmp/octant.tar.gz | grep "$OCTANT_CHECKSUM" &&     if [[ $? -ne 0 ]]; then echo "Bad checksum"; exit 444; fi &&     tar -xzvf /tmp/octant.tar.gz --strip 1 -C /opt 
+[36mINFO[0m[0008] Unpacking ****fs as cmd RUN apk update &&     apk add       ca-certificates       xdg-utils       &&     wget --quiet --output-document /tmp/octant.tar.gz         https://github.com/vmware-tanzu/octant/releases/download/v${OCTANT_VERSION}/octant_${OCTANT_VERSION}_Linux-64bit.tar.gz &&     sha256sum /tmp/octant.tar.gz | grep "$OCTANT_CHECKSUM" &&     if [[ $? -ne 0 ]]; then echo "Bad checksum"; exit 444; fi &&     tar -xzvf /tmp/octant.tar.gz --strip 1 -C /opt requires it. 
+[36mINFO[0m[0009] ENV OCTANT_VERSION=0.16.2                    
+[36mINFO[0m[0009] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0009] ENV OCTANT_CHECKSUM=ff8db21bb32fdad5fb44883df19cd95a5cc0a8b196954ba0141b8eba9111e4c9 
+[36mINFO[0m[0009] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0009] RUN apk update &&     apk add       ca-certificates       xdg-utils       &&     wget --quiet --output-document /tmp/octant.tar.gz         https://github.com/vmware-tanzu/octant/releases/download/v${OCTANT_VERSION}/octant_${OCTANT_VERSION}_Linux-64bit.tar.gz &&     sha256sum /tmp/octant.tar.gz | grep "$OCTANT_CHECKSUM" &&     if [[ $? -ne 0 ]]; then echo "Bad checksum"; exit 444; fi &&     tar -xzvf /tmp/octant.tar.gz --strip 1 -C /opt 
+[36mINFO[0m[0009] Taking snapshot of full filesystem...        
+[36mINFO[0m[0009] Resolving 490 paths                          
+[36mINFO[0m[0009] cmd: /bin/sh                                 
+[36mINFO[0m[0009] args: [-c apk update &&     apk add       ca-certificates       xdg-utils       &&     wget --quiet --output-document /tmp/octant.tar.gz         https://github.com/vmware-tanzu/octant/releases/download/v${OCTANT_VERSION}/octant_${OCTANT_VERSION}_Linux-64bit.tar.gz &&     sha256sum /tmp/octant.tar.gz | grep "$OCTANT_CHECKSUM" &&     if [[ $? -ne 0 ]]; then echo "Bad checksum"; exit 444; fi &&     tar -xzvf /tmp/octant.tar.gz --strip 1 -C /opt] 
+[36mINFO[0m[0009] Running: [/bin/sh -c apk update &&     apk add       ca-certificates       xdg-utils       &&     wget --quiet --output-document /tmp/octant.tar.gz         https://github.com/vmware-tanzu/octant/releases/download/v${OCTANT_VERSION}/octant_${OCTANT_VERSION}_Linux-64bit.tar.gz &&     sha256sum /tmp/octant.tar.gz | grep "$OCTANT_CHECKSUM" &&     if [[ $? -ne 0 ]]; then echo "Bad checksum"; exit 444; fi &&     tar -xzvf /tmp/octant.tar.gz --strip 1 -C /opt] 
+fetch http://dl-cdn.alpinelinux.org/alpine/v3.12/main/x86_64/APKINDEX.tar.gz
+fetch http://dl-cdn.alpinelinux.org/alpine/v3.12/community/x86_64/APKINDEX.tar.gz
+v3.12.3-21-gd73c439b42 [http://dl-cdn.alpinelinux.org/alpine/v3.12/main]
+v3.12.3-19-g600182bf4f [http://dl-cdn.alpinelinux.org/alpine/v3.12/community]
+OK: 12745 distinct packages available
+(1/15) Installing ca-certificates (20191127-r4)
+(2/15) Installing libxau (1.0.9-r0)
+(3/15) Installing libbsd (0.10.0-r0)
+(4/15) Installing libxdmcp (1.1.3-r0)
+(5/15) Installing libxcb (1.14-r1)
+(6/15) Installing libx11 (1.6.12-r0)
+(7/15) Installing libxext (1.3.4-r0)
+(8/15) Installing libice (1.0.10-r0)
+(9/15) Installing libuuid (2.35.2-r0)
+(10/15) Installing libsm (1.2.3-r0)
+(11/15) Installing libxt (1.2.0-r0)
+(12/15) Installing libxmu (1.1.3-r0)
+(13/15) Installing xset (1.2.4-r0)
+(14/15) Installing xprop (1.2.4-r0)
+(15/15) Installing xdg-utils (1.1.3-r0)
+Executing busybox-1.31.1-r19.trigger
+Executing ca-certificates-20191127-r4.trigger
+OK: 12 MiB in 29 packages
+ff8db21bb32fdad5fb44883df19cd95a5cc0a8b196954ba0141b8eba9111e4c9  /tmp/octant.tar.gz
+octant_0.16.2_Linux-64bit/README.md
+octant_0.16.2_Linux-64bit/octant
+[36mINFO[0m[0026] Taking snapshot of full filesystem...        
+[36mINFO[0m[0026] Resolving 1253 paths                         
+[36mINFO[0m[0030] COPY docker-entrypoint.sh /                  
+[36mINFO[0m[0030] Resolving 1 paths                            
+[36mINFO[0m[0030] Taking snapshot of files...                  
+[36mINFO[0m[0030] Pushing layer harbor.simonjamesrowe.com/todo/cache:29ffa96eebb04225895be0ce5f5d5b9c7ee6f22e67bd74e441ce40b78e2297e7 to cache now 
+[36mINFO[0m[0030] Pushing layer harbor.simonjamesrowe.com/todo/cache:7adcbd5da76a158f08a0e3bd216adb5266f5a10fedc8d536cd597d2756dd514f to cache now 
+[33mWARN[0m[0031] error uploading layer to cache: failed to push to destination harbor.simonjamesrowe.com/todo/cache:29ffa96eebb04225895be0ce5f5d5b9c7ee6f22e67bd74e441ce40b78e2297e7: HEAD https://harbor.simonjamesrowe.com/v2/todo/cache/blobs/sha256:d6670a8549fcfa22ed1ae93c56a0c96403ea890e83ae836acdc593799b3ccfe7: unsupported status code 401 
+[36mINFO[0m[0031] Saving file opt/octant for later use         
+[36mINFO[0m[0031] Deleting filesystem...                       
+[36mINFO[0m[0031] Retrieving image manifest alpine:3           
+[36mINFO[0m[0032] Retrieving image manifest alpine:3           
+[36mINFO[0m[0034] Executing 0 build triggers                   
+[36mINFO[0m[0034] Checking for cached layer harbor.simonjamesrowe.com/todo/cache:92e0706e10f9faf0bdc6a70ba86eaf0b7fe63f94fad36ef2417ad4e7385761c2... 
+[36mINFO[0m[0034] No cached layer found for cmd RUN addgroup -g 2000 -S octant && adduser -u 1000 -h /home/octant -G octant -S octant 
+[36mINFO[0m[0034] Unpacking ****fs as cmd RUN addgroup -g 2000 -S octant && adduser -u 1000 -h /home/octant -G octant -S octant requires it. 
+[36mINFO[0m[0037] WORKDIR /tmp                                 
+[36mINFO[0m[0037] cmd: workdir                                 
+[36mINFO[0m[0037] Changed working directory to /tmp            
+[36mINFO[0m[0037] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0037] RUN addgroup -g 2000 -S octant && adduser -u 1000 -h /home/octant -G octant -S octant 
+[36mINFO[0m[0037] Taking snapshot of full filesystem...        
+[36mINFO[0m[0037] Resolving 490 paths                          
+[36mINFO[0m[0037] cmd: /bin/sh                                 
+[36mINFO[0m[0037] args: [-c addgroup -g 2000 -S octant && adduser -u 1000 -h /home/octant -G octant -S octant] 
+[36mINFO[0m[0037] Running: [/bin/sh -c addgroup -g 2000 -S octant && adduser -u 1000 -h /home/octant -G octant -S octant] 
+[36mINFO[0m[0037] Taking snapshot of full filesystem...        
+[36mINFO[0m[0037] Resolving 494 paths                          
+[36mINFO[0m[0037] COPY --from=builder /opt/octant /opt/octant  
+[36mINFO[0m[0037] Pushing layer harbor.simonjamesrowe.com/todo/cache:92e0706e10f9faf0bdc6a70ba86eaf0b7fe63f94fad36ef2417ad4e7385761c2 to cache now 
+[36mINFO[0m[0037] Resolving 1 paths                            
+[36mINFO[0m[0037] Taking snapshot of files...                  
+[36mINFO[0m[0041] Pushing layer harbor.simonjamesrowe.com/todo/cache:88e4d9ba4717f9954b13b32f434fa3d96de7d0dee05247a32ef6454a806bff20 to cache now 
+[36mINFO[0m[0041] COPY docker-entrypoint.sh /                  
+[36mINFO[0m[0041] Resolving 1 paths                            
+[36mINFO[0m[0041] Taking snapshot of files...                  
+[36mINFO[0m[0041] Pushing layer harbor.simonjamesrowe.com/todo/cache:e202f0dfaa391f16495860f50b42d22d3d9bdc82fe32c666849397227a4f2d4c to cache now 
+[36mINFO[0m[0041] ENTRYPOINT /docker-entrypoint.sh             
+[36mINFO[0m[0041] No files changed in this command, skipping snapshotting. 
+[33mWARN[0m[0041] error uploading layer to cache: failed to push to destination harbor.simonjamesrowe.com/todo/cache:92e0706e10f9faf0bdc6a70ba86eaf0b7fe63f94fad36ef2417ad4e7385761c2: HEAD https://harbor.simonjamesrowe.com/v2/todo/cache/blobs/sha256:eee52d2d7a8cc7161df23b651edf829d16a4416fc0aea11447c49cac3b233f92: unsupported status code 401 
+
+Showing logs for build [32msimonjamesrowe-octant-master-re-8k7vk-3[0m stage [32mfrom-build-pack[0m and container [32mstep-build-helm-build[0m
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+DEBUG: Using helmBinary helm with feature flag: template-mode
+DEBUG: Initialising Helm 'init --client-only'
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+Running helm dependency build in .
+No requirements found in ./charts.
+error: failed to lint the chart '.': failed to run 'helm lint --set tags.**-lint=true --set global.**Lint=true --set-string global.**TypeEnv=lint --values values.yaml' command in directory '.', output: '==> Linting .
+[ERROR] Chart.yaml: directory name (helm) and chart name (octant) must be the same
+[INFO] Chart.yaml: icon is recommended
+
+Error: 1 chart(s) linted, 1 chart(s) failed'
+[31m
+Pipeline failed on stage 'from-build-pack' : container 'step-build-helm-build'. The execution of the pipeline has stopped.[0m
