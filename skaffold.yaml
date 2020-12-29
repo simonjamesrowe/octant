@@ -22,7 +22,7 @@ profiles:
     helm:
       releases:
       - name: octant
-        chartPath: helm
+        chartPath: charts/octant
         setValueTemplates:
           image.repository: '{{.DOCKER_REGISTRY}}/{{.IMAGE_NAME}}'
           image.tag: '{{.DIGEST_HEX}}'

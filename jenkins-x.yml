@@ -9,7 +9,7 @@ pipelineConfig:
             name: skaffold-version
           - sh: export VERSION=$PREVIEW_VERSION && skaffold build -f skaffold.yaml
             name: container-build
-          - dir: helm
+          - dir: charts/octant
             steps:
               - sh: jx step helm build
                 name: helm-build
@@ -25,7 +25,7 @@ pipelineConfig:
         steps:
           - sh: export VERSION=`cat VERSION` && skaffold build -f skaffold.yaml
             name: container-build
-          - dir: helm
+          - dir: charts/octant
             steps:
               - sh: jx step helm build --verbose
                 name: helm-build
@@ -33,7 +33,7 @@ pipelineConfig:
       promote:
         replace: true
         steps:
-          - dir: helm
+          - dir: charts/octant
             steps:
               - sh: jx step changelog --version v\$(cat ../../VERSION)
                 name: changelog
