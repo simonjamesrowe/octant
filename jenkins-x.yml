@@ -1,0 +1,42 @@
+buildPack: docker-helm
+pipelineConfig:
+  pipelines:
+    pullRequest:
+      build:
+        replace: true
+        steps:
+          - sh: skaffold version
+            name: skaffold-version
+          - sh: export VERSION=$PREVIEW_VERSION && skaffold build -f skaffold.yaml
+            name: container-build
+          - dir: helm
+            steps:
+              - sh: jx step helm build
+                name: helm-build
+
+    release:
+      setVersion:
+        replace: true
+        steps:
+          - sh: jx step next-version --use-git-tag-only --tag
+            name: tag-with-new-version
+      build:
+        replace: true
+        steps:
+          - sh: export VERSION=`cat VERSION` && skaffold build -f skaffold.yaml
+            name: container-build
+          - dir: helm
+            steps:
+              - sh: jx step helm build --verbose
+                name: helm-build
+                comment: Let's build chart
+      promote:
+        replace: true
+        steps:
+          - dir: helm
+            steps:
+              - sh: jx step changelog --version v\$(cat ../../VERSION)
+                name: changelog
+              - comment: Let's release the helm chart
+                sh: jx step helm release
+                name: helm-release
