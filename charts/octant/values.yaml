@@ -4,7 +4,7 @@ image:
   repository: draft
   tag: dev
   pullPolicy: IfNotPresent
-  
+
 keycloakGatekeeper:
   enabled: false
   url: ~
