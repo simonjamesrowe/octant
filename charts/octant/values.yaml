@@ -1,9 +1,10 @@
 replicas: 1
 
 image:
-  fullname: aleveille/octant-dashboard:v0.16.2
+  repository: draft
+  tag: dev
   pullPolicy: IfNotPresent
-
+  
 keycloakGatekeeper:
   enabled: false
   url: ~
