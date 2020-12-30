@@ -29,6 +29,6 @@ COPY docker-entrypoint.sh /
 RUN mkdir -p  ~/.config/octant/plugins
 RUN wget https://github.com/jenkins-x/octant-jx/releases/download/v0.0.36/octant-jx-linux-amd64.tar.gz
 RUN tar -xzvf octant-jx-linux-amd64.tar.gz
-RUN mv octant-* ~/.config/octant/plugins
+RUN mv octant-* /home/octant/.config/octant/plugins
 
 ENTRYPOINT /docker-entrypoint.sh
