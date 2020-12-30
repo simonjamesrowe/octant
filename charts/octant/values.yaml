@@ -1,8 +1,8 @@
 replicas: 1
 
 image:
-  repository: draft
-  tag: dev
+  repository: harbor.simonjamesrowe.com/simonjamesrowe/octant
+  tag: 0.0.11
   pullPolicy: IfNotPresent
 
 keycloakGatekeeper:
