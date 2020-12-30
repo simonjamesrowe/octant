@@ -21,11 +21,6 @@ spec:
       serviceAccountName: {{ include "octant.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
-          env:
-            - name: OCTANT_PLUGINS_DIR
-              value: {{ .Values.plugins.dir.mountPath | quote }}
-            - name: OCTANT_PLUGINS_LIST
-              value: {{ .Values.plugins.install | join " " | quote }}
       {{- if .Values.extraInitContainers }}
         {{- toYaml .Values.extraInitContainers | nindent 8 }}
       {{- end }}
