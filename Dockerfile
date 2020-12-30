@@ -26,7 +26,7 @@ RUN addgroup -g 2000 -S octant && adduser -u 1000 -h /home/octant -G octant -S o
 COPY --from=builder /opt/octant /opt/octant
 COPY docker-entrypoint.sh /
 
-RUN mkdir -p  ~/.config/octant/plugins
+RUN mkdir -p /home/octant/.config/octant/plugins
 RUN wget https://github.com/jenkins-x/octant-jx/releases/download/v0.0.36/octant-jx-linux-amd64.tar.gz
 RUN tar -xzvf octant-jx-linux-amd64.tar.gz
 RUN mv octant-* /home/octant/.config/octant/plugins
